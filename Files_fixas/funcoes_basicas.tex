@@ -1,0 +1,162 @@
+\section{Geral}
+\label{sec: texto}
+
+Boa documentação para \LaTeX \href{https://en.wikibooks.org/wiki/LaTeX}{\textit{ aqui}}.
+
+\subsection{Texto}
+
+\textbf{Negrito}.
+
+\textit{Itálico}.
+
+\underline{Sublinhado}.
+
+\textsc{Small caps}.
+
+\begin{bfseries}
+Série de texto em negrito
+\end{bfseries}
+
+\hl{Texto grifado}
+
+\begin{center}
+Este texto está centralizado.
+\end{center}
+
+\subsubsection{Tamanho da Fonte}
+
+\tiny
+Muito pequeno
+
+\scriptsize
+Menos pequeno
+
+\footnotesize
+Rodapé
+
+\small
+Pequeno
+
+\normalsize
+Normal
+
+\large
+Maior
+
+\Large
+Grande
+
+\LARGE
+Muito grande
+
+\huge
+Extremamente Grande
+
+\Huge
+Enorme
+
+\normalsize
+
+
+\subsection{Espaçamentos}
+
+\hspace{1cm}
+\vspace{1cm}
+
+\section{Listas}
+
+\begin{itemize}
+    \item Item normal
+    \item [$\star$] Esse é um item com estrela.
+    \item [a] Item com a
+    \item [$\dagger$] Esse é um item com cruz.
+\end{itemize}
+
+\vspace{1cm}
+
+\begin{enumerate}
+    \item Esse é o primeiro nível.
+    \begin{enumerate}
+        \item Esse é o segundo.
+    \end{enumerate}
+\end{enumerate}
+
+\section{Figuras e tabelas}
+\label{sec: fig/tab}
+
+\subsection{Figuras}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm]{figures/sample.png}
+    \caption{Legenda}
+    \label{fig: sample}
+\end{figure}
+
+\subsection{Tabelas}
+
+Acesse esse \href{https://www.tablesgenerator.com}{\textit{link}} para fazer sua tabela.
+
+\section{Matemática}
+
+Seja $f$ a função $f(x)=x^2$.
+Então $f(2)=4$ e \[ f(-3)=9. \]
+
+\begin{equation}
+    x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\label{eq: bhaskara}
+\end{equation}
+
+\[ \alpha \delta \Delta \psi \]
+
+\[ c_{l\alpha} \]
+
+\[ \int_2^{15} x^2\,dx \]
+
+\[ \left(\frac{1}{5}\right\}^6 \]
+
+\[ \lim_{x \to 1} f(x) \]
+
+\[ \sum_{i=1}^n i \]
+
+\begin{align}
+a^2 + b^2 &= c^2 \\
+a+b &= c + 2
+\end{align}
+
+\begin{equation}
+\begin{Bmatrix}
+a & b\\
+c & d
+\end{Bmatrix}
+\end{equation}
+
+\begin{theorem}[Teorema de Pitágoras]
+Em um triângulo retângulo, o quadrado da hipotenusa é igual à soma dos quadrados dos catetos.
+\end{theorem}
+
+\section{Referências Cruzadas}
+
+Segundo a Equação \ref{eq: bhaskara}
+
+Na Figura \ref{fig: sample}
+
+Na Seção \ref{sec: texto}
+
+\section{Citação}
+
+Segundo Houghton \cite{houghton}
+
+\begin{table}[H]
+\centering
+\caption{Valores calculados de módulo de impulso sofrido (I), energia cinética e quantidade de movimento (P).}
+\label{tab:4}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|}
+\hline
+Parâmetro    & Valor                \\ \hline
+$\Delta t_1$ & $(0,094 \pm 0,001)s$ \\ \hline
+$\Delta t_2$ & $(0,099 \pm 0,001)s$ \\ \hline
+\end{tabular}%
+}
+\end{table}

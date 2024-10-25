@@ -1,0 +1,74 @@
+%\section{Resumo}
+
+\section{Introdução}
+O presente trabalho apresenta os resultados dos experimentos realizados nos túneis de vento da universidade para a disciplina "Métodos Experimentais em Aerodinâmica" do curso de graduação em Engenharia Aeronáutica. 
+
+O primeiro experimento realizado pelo grupo consistiu na análise dos valores de coeficiente de pressão em pontos superficiais ao longo de uma seção transversal de um cilindro posicionado paralelamente à direção do escoamento no interior do túnel de vento, considerando-se como uma configuração 2D. 
+
+O segundo experimento foi o ensaio de uma asa em configuração para análise de aerodinâmica bidimensional dos coeficientes de sustentação, de arrasto e de momento. 
+
+O terceiro, por sua vez, tratou-se do ensaio da asa em configuração para análise da aerodinâmica tridimensional, também com cálculos de coeficientes de sustentação, de arrasto e de momento. 
+
+Os ensaios se inserem no contexto de introdução a métodos experimentais em aerodinâmica aos alunos e objetivam o ensino de boas práticas no uso dos instrumentos, bem como validação de conceitos básicos aprendidos via aerodinâmica analítica. 
+
+\section{Desenvolvimento}
+%Escrever um desenvolvimento comum aos três experimentos
+%Colocar dimensões e parâmetros do túnel (lembrar dos coeficientes KL e KM), talvez já com as dimensões dos objetos de ensaio
+
+\input{01.Parte1/Cilindro}
+
+
+\subsection{Análise bidimensional na asa}
+Os procedimentos para execução deste experimento são análogos aos do ensaio do cilindro, com diferenças que se resumem ao objeto ensaiado, aos tipos de dados coletados e ao intervalo de ângulos aplicados. 
+
+Desta vez, foi instalada uma asa de envergadura coincidente com a largura do túnel de vento, de modo a permitir a análise de aerodinâmica bidimensional do aerofólio NACA0012, referente à seção da asa. Os instrumentos de medição dos dados de interesse foram o micromanômetro, para pressões dinâmicas, e uma balança aerodinâmica, que retorna valores de forças dianteira, traseira e de arrasto. Os dados são coletados por aumento gradual (de 2° em 2°) do ângulo de ataque, de -4° a 20°. %Explicar brevemente o que as forças dianteira e traseira medem
+
+%Explicar como se obtém sustentação e momento a partir de fore e aft
+
+\subsection{Análise tridimensional na asa}
+Os mesmos procedimentos relativos ao ensaio para asa bidimensional foram seguidos, desta vez para a asa tridimensional (modelo de envergadura menor do que a largura do túnel). O mesmo manômetro diferencial foi usado, de modo que a leitura desse instrumento fornece diretamente a pressão dinâmica de escoamento livre, a qual será usada para o cálculo da velocidade de escoamento livre, do número de Reynolds e dos coeficientes aerodinâmicos. Os ângulos de ataque estudados também foram de $-4^{\circ}$ a $20^{\circ}$ sendo o ângulo de $-6^{\circ}$ usado como tara.
+
+Em comparação ao experimento de asa bidimensional, ressalta-se como diferença na condução do experimento de asa 3D o uso de um sistema aquisição de dados computadorizado. Esse sistema, portanto, é responsável por amostrar o sinal advindo da balança a uma frequência estabelecida pelo usuário (definida em $1000\ Hz$) e até que seja atingido um número de amostras estabelecido ($5000$ amostras). Esses parâmetros foram definidos de modo minimizar o máximo possível o erro nas medidas sem que o custo do ensaio seja aumentado demasiadamente. O sinal amostrado pelo computador é dado em Volts, de modo que é preciso convertê-lo para unidades que façam sentido físico (Newton e Newton-metro) utilizando a tabela abaixo:
+\begin{table}[h]
+\centering
+\caption{Tabela com valores de calibração para o sinal aferido pelo computador.}
+\begin{tabular}{@{}cc@{}}
+\toprule
+Constantes         & Valores  \\ \midrule
+$C_{lift}\ [N/V]$    & $130,4$  \\
+$C_{drag}\ [N/V]$    & $-8,335$ \\
+$C_{moment}\ [Nm/V]$ & $89,100$ \\ \bottomrule
+\end{tabular}
+\end{table}
+
+As expressões usadas para a obtenção dos coeficientes aerodinâmicos são descritas abaixo:
+\begin{align}
+    L&=C_{lift}(FORE-\overline{FORE}+AFT-\overline{AFT})\\
+    D&=C_{drag}(DRAG-\overline{DRAG})\\
+    M&=C_{moment}(-FORE+\overline{FORE}+AFT-\overline{AFT})\\
+    C_L&=\dfrac{L}{q_{\infty}S}\\
+    C_D&=\dfrac{D}{q_{\infty}S}\\
+    C_M&=\dfrac{M}{q_{\infty}Sc}\\
+\end{align}
+
+O sinal amostrado também conta com medidas de desvio padrão, a fim de que o erro associado às medidas de sustentação, arrasto e momento de arfagem seja calculado. O erro experimental dessas medidas foi calculado considerando um intervalo de confiança de $95\%$, e posteriormente foi propagado para os coeficientes aerodinâmicos considerando o erro associado à pressão dinâmica. Uma vez que as dimensões da asa foram fornecidas diretamente pelo docentes, e na base de dados do túnel não consta informações acerca da incerteza nessas medidas, foi considerado que suas dimensões foram obtidas por métodos que garantem uma incerteza muito inferior à ordem de grandeza dos demais erros. Isso poderia ser alcançado através do uso de um paquímetro, por exemplo, para a obtenção das dimensões da asa.
+
+O perfil aerodinâmico foi mesmo da análise bidimensional (NACA 0012), mas as dimensões são diferentes: $152\ mm$ de corda e $300\ mm$ de envergadura. Uma vez que a asa não mais se estende ao longo de toda a largura do túnel, espera-se que assim seja possível capturar os efeitos de vórtice de ponte de asa, alterando o comportamento dos coeficientes aerodinâmicos. A fim de garantir a possível repetibilidade do experimental, os seguintes parâmetros são fornecidos (os valores aqui relatados já estão corrigidos considerando os efeitos de túnel de vento, os quais serão explicitados adiante):
+
+Por fim, a mesma asa foi analisada computacionalmente utilizando o \textit{software} Xflr5, a fim dos resultados experimental e computacional serem comparados.
+
+
+
+\section{Resultados e discussão}
+
+\input{01.Parte1/Cilindro_Resultados}
+%Introduzir e inserir tabela com os dados
+%Analisar e inserir gráfico de Cp
+
+\subsection{Análise bidimensional na asa}
+%Introduzir e inserir tabela com os dados
+%Analisar e inserir gráficos de sustentação, arrasto e momento
+
+\subsection{Análise tridimensional na asa}
+
+\section{Conclusão}
